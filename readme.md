@@ -3,27 +3,27 @@
 ## Steps to convert decimal to IEEE 754 32-bit single precision floating-point number:
 
 1. Sign Bit (1-bit):
-   - 
+   
    - `0` if the number is positive. 
    - `1` if the number is negative. 
 2. Convert absolute value to binary:
-   - 
+
    - Split decimal number into integer and fractional parts.
    - Convert integer into binary.
    - Convert fractional into binary. 
 3. Normalize the Binary:
-   - 
+   
    - Normalize the binay to fit the form `1.xxxxx * 2^n`.
    - Adjust exponent according to normalization process.
 4. Calculate the Exponent:
-   - 
+   
    - The *biased* exponent is compute dby adding 127 to the actual exponent and converted to an 8-bit binary string using `String.format()`.
 5. Mantissa:
-   - 
+   
    - The mantissa is our fractional parts left over from the normalized binary number.
    - Pad or truncate to 23 bits as required by IEEE 754 standard. 
 6. IEEE 754 String Representation:
-   - 
+   
    - Conversion successful, add strings
       - The sign bit + the 8 Bit exponent + the 23 bit mantissa = 32 bit IEEE 754 floating-point number.
 
